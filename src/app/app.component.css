@@ -9,19 +9,35 @@
     z-index: 9999;
     position: fixed;
     top: 0px;
-    background-color: #606060;
+    background-color: #040608;
     display: flex;
     justify-content: center;
-    align-items: center;
 }
+.splash1 span {
+    margin-top: auto;
+}
+
 .splash2 {
     width: 100%;
     height: 50%;
     z-index: 9999;
     position: fixed;
     bottom: 0px;
-    background-color: #606060;
+    background-color: #040608;
     display: flex;
     justify-content: center;
-    align-items: center;
+}
+
+.splash1 span,
+.splash2 span {
+    width: 50%;
+    height: 1px;
+    background-color: #273040;
+}
+
+.splash1 span .loadbar,
+.splash2 span .loadbar {
+    width: 100%;
+    height: 100%;
+    background-color: #00e5ea;
 }

@@ -1,23 +1,32 @@
 <div class="main">
     <ol>
+        @for (r of routeArray; track $index) {
         <li>
-            <a [routerLink]="['/home']">home</a>
+            <button (click)="toggleRoute(r.url)">{{ r.label }}</button>
         </li>
-        <li>
-            <a [routerLink]="['/skills']">skills</a>
-        </li>
-        <li>
-            <a [routerLink]="['/projects']">projects</a>
-        </li>
+        }
     </ol>
+    
     <router-outlet></router-outlet>
 
     @if (togglescreen) {
-    <div class="splash1">
-        <span>Loading...</span>
+    <div class="splash1" [@stoggle]>
+        @if (togglescreenspan) {
+        <span [@sToggleInBorder]>
+            @if (togglescreenspanloader) {
+            <div [@sToggleBorderLoader] class="loadbar"></div>
+            }
+        </span>
+        }
     </div>
-    <div class="splash2">
-        <span>Loading...</span>
+    <div class="splash2" [@stoggle]>
+        @if (togglescreenspan) {
+        <span [@sToggleInBorder]>
+            @if (togglescreenspanloader) {
+            <div [@sToggleBorderLoader] class="loadbar"></div>
+            }
+        </span>
+        }
     </div>
     }
 
