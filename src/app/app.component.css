@@ -1,0 +1,27 @@
+
+.main {
+    width: 100%;
+    height: 100%;
+}
+.splash1 {
+    width: 100%;
+    height: 50%;
+    z-index: 9999;
+    position: fixed;
+    top: 0px;
+    background-color: #606060;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.splash2 {
+    width: 100%;
+    height: 50%;
+    z-index: 9999;
+    position: fixed;
+    bottom: 0px;
+    background-color: #606060;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
