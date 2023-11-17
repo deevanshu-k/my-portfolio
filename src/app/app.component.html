@@ -1,5 +1,5 @@
 <div class="main">
-    <ol>
+    <ol class="navbar">
         @for (r of routeArray; track $index) {
         <li>
             <button (click)="toggleRoute(r.url)">{{ r.label }}</button>
