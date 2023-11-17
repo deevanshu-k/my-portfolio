@@ -19,10 +19,10 @@ import { provideAnimations } from '@angular/platform-browser/animations';
         style({
           height: '0%'
         }),
-        animate('1000ms', style({ height: '50%' }))
+        animate('600ms', style({ height: '50%' }))
       ]),
       transition(':leave', [
-        animate('2000ms', style({ height: '0%' }))
+        animate('1000ms', style({ height: '0%' }))
       ])
     ]),
     trigger('sToggleInBorder', [
@@ -50,8 +50,11 @@ export class AppComponent implements OnInit {
   togglescreenspanloader: boolean = false;
   routeArray: { label: string, url: string }[] = [
     { label: 'home', url: 'home' },
+    { label: 'about', url: 'about' },
     { label: 'skills', url: 'skills' },
-    { label: 'projects', url: 'projects' }
+    { label: 'projects', url: 'projects' },
+    { label: 'contact me', url: 'contact-me' },
+    { label: 'blog', url: 'blog' }
   ];
 
   constructor(
@@ -77,15 +80,15 @@ export class AppComponent implements OnInit {
         this.togglescreen = true;
         setTimeout(() => {
           this.togglescreenspan = true;
-        }, 1000);
+        }, 600);
         setTimeout(() => {
           this.togglescreenspanloader = true;
-        }, 2000);
+        }, 1500);
         setTimeout(() => {
           this.togglescreenspan = false;
           this.togglescreenspanloader = false;
           this.toggleScreenService.toggleScreen.next(false);
-        }, 3000);
+        }, 2600);
       }
       else {
         this.togglescreen = false;

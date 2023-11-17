@@ -16,6 +16,45 @@ body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
     /* background-color: #273040; */
     height: 100vh;
-    background: rgb(255, 180, 0);
-    background: linear-gradient(70deg, rgba(255, 180, 0, 1) 30%, #111111 0%);
+    background: #111111;
+    /* background: linear-gradient(70deg, rgba(255, 180, 0, 1) 30%, #111111 0%); */
 }
+
+
+/* Title Css For Different Pages  */
+.title {
+    position: relative;
+    margin-top: 45px;
+    margin-bottom: 30px;
+}
+
+.title h1 {
+    font-size: 56px;
+    text-align: center;
+    font-weight: 900 !important;
+    color: #fff !important;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.title h1 span {
+    color: #ffb400;
+}
+
+.title .title-bg {
+    text-align: center;
+    font-size: 110px;
+    left: 0;
+    letter-spacing: 10px;
+    line-height: 0.7;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    text-transform: uppercase;
+    font-weight: 800;
+
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.07);
+}
+
+/* ---------------END------------------  */
