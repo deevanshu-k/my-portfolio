@@ -1,16 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NavigationStart, RouteConfigLoadEnd, RouteConfigLoadStart, Router, RouterLink, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { ToggleScreenService } from './services/toggle-screen.service';
-import { trigger, transition, state, style, animate, group } from '@angular/animations';
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { provideAnimations } from '@angular/platform-browser/animations';
+import { trigger, transition, style, animate } from '@angular/animations';
+import { DisableLinkDirective } from './directives/disable-link.directive';
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, RouterLink],
+  imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive, DisableLinkDirective],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
   animations: [
@@ -40,11 +39,25 @@ import { provideAnimations } from '@angular/platform-browser/animations';
         }),
         animate('1000ms', style({ width: '100%' }))
       ])
+    ]),
+    trigger('tmenu',[
+      transition(':enter', [
+        style({
+          width: '0%',
+          opacity: '0%'
+        }),
+        animate('200ms', style({ width: '100%', opacity: '100%' }))
+      ]),
+      transition(':leave', [
+        animate('200ms', style({ opacity: '0%' })),
+        animate('200ms', style({ width: '0%' }))
+      ])
     ])
   ]
 })
 export class AppComponent implements OnInit {
-  title = 'sample17trying';
+  title = 'Welcome!';
+  menutoggle = false;
   togglescreen: boolean = false;
   togglescreenspan: boolean = false;
   togglescreenspanloader: boolean = false;
@@ -60,7 +73,8 @@ export class AppComponent implements OnInit {
   constructor(
     private router: Router,
     private toggleScreenService: ToggleScreenService
-  ) { }
+  ) {
+   }
 
   ngOnInit(): void {
     // this.router.events.subscribe(event => {
@@ -74,9 +88,9 @@ export class AppComponent implements OnInit {
     //     console.log("Load End !");
     //   }
     // });
-
     this.toggleScreenService.toggleScreen.subscribe(d => {
       if (d) {
+        this.menutoggle=false;
         this.togglescreen = true;
         setTimeout(() => {
           this.togglescreenspan = true;

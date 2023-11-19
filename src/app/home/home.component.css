@@ -13,8 +13,8 @@
     box-shadow: 0 0 7px rgba(0, 0, 0, .9);
     background-color: #000;
     overflow: hidden;
-    margin-left: 55px ;
-    margin-right: 55px ;
+    margin-left: 55px;
+    margin-right: 55px;
     /* height: calc(100vh - 80px); */
     aspect-ratio: 1/1;
     width: 400px;
@@ -31,6 +31,7 @@
 
 .main .header-body {
     max-width: 600px;
+    margin-right: 55px;
     position: relative;
 }
 
@@ -86,4 +87,65 @@
 
 .main .header-body button:hover {
     background-color: #ffb400;
+}
+
+@media screen and (max-width: 1200px) {
+    .main {
+        flex-direction: column;
+        background: transparent;
+    }
+
+    .main .header-img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+
+        border: 4px solid #252525 !important;
+        display: block !important;
+    }
+
+    .main .header-img {
+        margin: 40px;
+    }
+
+    .main .header-body {
+        margin-right: 0px;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main .header-body .head::before {
+        display: none;
+    }
+
+    .main .header-body h4 {
+        text-align: center;
+        padding: 0px;
+        font-size: 28px;
+    }
+
+    .main>.header-body>p {
+        text-align: center !important;
+        font-size: 14px;
+    }
+
+    .main>.header-body>.more-about-me {
+        width: max-content;
+    }
+
+}
+
+@media (max-width: 576px) {
+    .main .header-img {
+        width: 230px !important;
+        height: 230px !important;
+    }
+
+    .main .header-body h4 {
+        font-size: 24px;
+        line-height: 30px;
+        margin: 18px 0 13px;
+    }
 }
