@@ -47,5 +47,5 @@ jobs:
           curl \ 
           -H "Title: Portfolio Deployment 👍" \ 
           -H "Content-Type: text/plain" \ 
-          -d $'Repo: ${{ github.repository }}\nCommit: ${{ github.sha }}\nRef: ${{ github.ref }}\nStatus: ${{ job.status}}' 
+          -d 'Repo: ${{ github.repository }} \n ${{ job.status}}' 
           https://ntfy.sh/dk_alerts
