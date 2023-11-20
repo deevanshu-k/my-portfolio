@@ -42,3 +42,10 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
           BRANCH: gh-pages
           FOLDER: deploy_dist/sample17trying/browser
+      - name: Actions Ntfy
+        run: | 
+          curl \ 
+          -H "Title: Portfolio Deployment 👍" \ 
+          -H "Content-Type: text/plain" \ 
+          -d $'Repo: ${{ github.repository }}\nCommit: ${{ github.sha }}\nRef: ${{ github.ref }}\nStatus: ${{ job.status}}' 
+          https://ntfy.sh/dk_alerts
