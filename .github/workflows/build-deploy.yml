@@ -45,7 +45,7 @@ jobs:
       - name: Actions Ntfy
         run: | 
           curl \ 
-           -H "Title: Portfolio Deployment" \ 
-           -H "Content-Type: text/plain" \ 
-           -d "Repo: ${{ github.repository }} \n ${{ job.status}}" \
-           ntfy.sh/dk_alerts
+            -H "Title: Portfolio Deployment" \ 
+            -H "Content-Type: text/plain" \ 
+            -d "Repo: ${{ github.repository }} \n ${{ job.status}}" \
+            http://ntfy.sh/dk_alerts
