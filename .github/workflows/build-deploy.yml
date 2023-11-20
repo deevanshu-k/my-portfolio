@@ -1,4 +1,4 @@
-seename: Build and Deploy
+name: Build and Deploy
 
 on:
   push:
@@ -46,9 +46,9 @@ jobs:
         uses: niniyas/ntfy-action@master
         if: success()
         with:
-         url: 'https://ntfy.sh/dk_alerts'
-         topic: 'Title: Portfolio Deployment'
-         priority: 4
-         headers: '{"authorization": "Basic 123456", "another-one": "Basic 123456"}'
-         tags: +1,partying_face,action,successfully,completed
-         details: "Repo: ${{ github.repository }} \n ${{ job.status}}"
+          url: 'https://ntfy.sh/dk_alerts'
+          topic: 'Title: Portfolio Deployment'
+          priority: 4
+          headers: '{"authorization": "Basic 123456", "another-one": "Basic 123456"}'
+          tags: +1,partying_face,action,successfully,completed
+          details: "Repo: ${{ github.repository }} \n ${{ job.status}}"
